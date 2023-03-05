@@ -1,0 +1,26 @@
+#include <iostream>
+#include <vector>
+
+using namespace std;
+const long long MOD = 1e9 + 7;
+
+void fib() {
+    long long n;
+    cin >> n;
+    if (n <= 1){
+        cout << n << endl;
+        return;
+    }
+    int prepre = 0, pre = 1, ans;
+    for (int i = 2; i <= n; i++) {
+        ans = (prepre + pre) % MOD;
+        prepre = pre;
+        pre = ans;
+    }
+    cout << ans << endl;
+}
+
+int main() {
+    fib();
+    return 0;
+}
