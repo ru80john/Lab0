@@ -1,0 +1,22 @@
+#include <iostream>
+
+using namespace std;
+
+int main() {
+    int n;
+    string s;
+    cin >> n >> s;
+    for (int i = 1; i < n; ++i) {
+        int upp_b = n - i, ans = 0;
+        for(int l = 0; l < upp_b; ++l) {
+            if (s[l] != s[l+i]) {
+                ans++;
+            }
+            else {
+                break;
+            }
+        }
+        cout << ans << endl;
+    }
+    return 0;
+}
