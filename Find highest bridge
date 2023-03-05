@@ -1,0 +1,29 @@
+#include <iostream>
+#include <vector>
+
+using namespace std;
+using ll = long long int;
+
+int main()
+{
+    int n;
+    cin >> n;
+    vector<ll> arr(n);
+
+    for(int i = 0; i < arr.size(); i++){
+        int x;
+        cin >> x;
+        arr[i] = x;
+    }
+    int compare = 0;
+    int idx = 0;
+    for(int i = 0; i < arr.size(); i++){
+        if(arr[i] > compare){
+            idx = i;
+            compare = arr[i];
+        }
+    }
+
+    cout << idx + 1;
+    return 0;
+}
