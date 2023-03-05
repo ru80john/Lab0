@@ -1,0 +1,34 @@
+#include <iostream>
+#include <vector>
+
+using namespace std;
+
+int hanoi_counts(int n, int a = 1, int b = 2, int c = 3){
+        if(n == 1){
+            return 1;
+        }else{
+            return hanoi_counts(n - 1, a, c, b) + hanoi_counts(1, a, b, c) + hanoi_counts(n - 1, b, a, c);
+        }
+}
+
+void hanoi(int n, int a = 1, int b = 2, int c = 3){
+    if(n == 1){
+        cout << a << ' ' << c << endl;
+    }else{
+        hanoi(n - 1, a, c, b);
+        hanoi(1, a, b, c);
+        hanoi(n - 1, b, a, c);
+    }
+}
+
+int main(){
+    int n;
+    cin >> n;
+    int num = hanoi_counts(n);
+    cout << num << endl;
+    hanoi(n);
+
+    return 0;
+
+
+}
